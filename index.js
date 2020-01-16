@@ -17,7 +17,8 @@ const doCatData = function(error, catObjs) {
 };
 
 // Testrun code
+let breedName = parseCommandArg()[0];
 breedFetcher.fetchBreedDescription(
-  parseCommandArg()[0],
+  breedName,
   doCatData
 );
