@@ -9,7 +9,7 @@ const fetchBreedDescription = function(breed, callback) {
     console.log('statusCode:', response && response.statusCode);
 
     // dealing with the main body
-    callback(error, JSON.parse(body));
+    callback(error, JSON.parse(body)[0][`description`]);
   });
 };
 

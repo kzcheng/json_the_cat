@@ -6,14 +6,10 @@ const parseCommandArg = function() {
 };
 
 // What to do after receiving catObj
-const doCatData = function(error, catObjs) {
-  if (catObjs.length === 0) {
-    console.log("Error: No Cat Found");
-    return;
-  }
+const doCatData = function(error, description) {
 
-  console.log(typeof catObjs);
-  console.log(catObjs);
+  console.log(typeof description);
+  console.log(description);
 };
 
 // Testrun code
