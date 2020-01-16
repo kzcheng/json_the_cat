@@ -7,11 +7,7 @@ const getCatData = function(breed, callback) {
     console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
 
     // dealing with the main body
-    const data = JSON.parse(body);
-    console.log(data[0]);
-    console.log(typeof data);
-
-  // callback(body, location);
+    callback(JSON.parse(body));
   });
 };
 
@@ -19,6 +15,19 @@ const parseCommandArg = function() {
   return process.argv.slice(2);
 };
 
-getCatData(parseCommandArg()[0]);
+// What to do after receiving catObj
+const doCatData = function(catObjs) {
+  if (catObjs.length === 0) {
+    console.log("Error: No Cat Found");
+    return;
+  }
 
-// git add
+  console.log(typeof catObjs);
+  console.log(catObjs);
+  
+};
+
+getCatData(
+  parseCommandArg()[0],
+  doCatData
+);
