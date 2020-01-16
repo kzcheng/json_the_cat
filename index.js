@@ -6,7 +6,7 @@ const parseCommandArg = function() {
 };
 
 const doWhateverYouDoWhenYouRunIntoErrors = function(error) {
-  // console.log(error);
+  console.log(error);
 };
 
 // What to do after receiving catObj

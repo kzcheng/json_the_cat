@@ -19,7 +19,7 @@ describe('#fetchBreedDescription', () => {
   });
 
   it(`return error when error is errored`, (done) => {
-    fetchBreedDescription('DSFJIASJDFI', (err, desc) => {
+    fetchBreedDescription('DSFJIASJDFI', (err) => {
       assert.equal(err, `Error: Nothing is found`);
       done();
     });
