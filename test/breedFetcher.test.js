@@ -3,7 +3,7 @@
 const { fetchBreedDescription } = require('../breedFetcher');
 const { assert } = require('chai');
 
-describe('fetchBreedDescription', () => {
+describe('#fetchBreedDescription', () => {
   it('returns a string description for a valid breed, via callback', (done) => {
     fetchBreedDescription('Siberian', (err, desc) => {
       // we expect no error for this scenario
@@ -14,6 +14,13 @@ describe('fetchBreedDescription', () => {
       // compare returned description
       assert.equal(expectedDesc, desc);
 
+      done();
+    });
+  });
+
+  it(`return error when error is errored`, (done) => {
+    fetchBreedDescription('DSFJIASJDFI', (err, desc) => {
+      assert.equal(err, `Error: Nothing is found`);
       done();
     });
   });
