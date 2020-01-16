@@ -20,3 +20,5 @@ const parseCommandArg = function() {
 };
 
 getCatData(parseCommandArg()[0]);
+
+// git add
